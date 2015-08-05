@@ -14,7 +14,7 @@ def scraper():
     else:
         links = []
         site = request.form['myUrl']
-        r = requests.get("http://" + site)
+        r = requests.get(site)
         data = r.text
         soup = BeautifulSoup(data, "html.parser")
         for link in soup.find_all('a'):
